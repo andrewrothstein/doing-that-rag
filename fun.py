@@ -1,12 +1,13 @@
 import langchain
+import os
 from langchain.llms import OpenAI
 from langchain.vectorstores import Weaviate
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.memory import ConversationBufferMemory
 
 # Configure components
-openai_api_key = "YOUR_OPENAI_API_KEY"
-weaviate_url = "http://localhost:8080"
+openai_api_key = os.getenv("OPENAI_API_KEY")
+weaviate_url = os.getenv("WEVIATE_URL", "http://localhost:8080")
 
 # Create instances
 embedding = OpenAIEmbeddings(openai_api_key=openai_api_key)
