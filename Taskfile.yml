@@ -1,7 +1,7 @@
 ---
 version: '3'
 tasks:
-  pack:
+  build:
     cmds:
       - |-
         pack build \
@@ -10,5 +10,4 @@ tasks:
           --builder paketobuildpacks/builder:base
   default:
     deps:
-      - task: pack
-
+      - task: build
