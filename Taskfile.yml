@@ -1,7 +1,12 @@
 ---
 version: '3'
 tasks:
+  ver:
+    cmds:
+      - pack version
   build:
+    deps:
+      - ver
     cmds:
       - |-
         pack build \
